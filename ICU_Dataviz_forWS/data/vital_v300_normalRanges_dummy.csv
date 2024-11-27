@@ -1,0 +1,8 @@
+parameter,min,max,unit
+ART(M),-5,5,mmHg
+RESP,-5,5,/min
+SpO2,-5,5,・ｽ・ｽ
+HR,-5,5,bpm
+TEMP,-5,5,・ｽ・ｽ
+c,-5,5,mL/cmH2O
+r,-5,5,mbar/L/s

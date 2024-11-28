@@ -9,5 +9,5 @@ export const staticParameters = {
 };
 export const guiParameters = {
   camMove : true,
-  animSpeed : 5,
+  animSpeed : 3,
 }

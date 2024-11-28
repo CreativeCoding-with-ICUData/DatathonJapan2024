@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <title>ICUデータ可視化</title>
     <script type="importmap">
@@ -36,19 +36,19 @@
 
         // CSV読み込み ------------------------------------------------------------------
         const k6e_data_fp = "./data/filled_k6eTFGcJxyuRnDeNMT5NwDCvQn8=.csv";
-        const RIO_data_fp = "./data/filled_RIOkzacHmHz8GhUb2oHUbkzcun0=.csv";
+        //const RIO_data_fp = "./data/filled_RIOkzacHmHz8GhUb2oHUbkzcun0=.csv";
         const normal_range_data_fp = "./data/vital_v300_normalRanges.csv";
 
         Promise.all([
             csv(k6e_data_fp),
-            csv(RIO_data_fp),
+        //    csv(RIO_data_fp),
             csv(normal_range_data_fp)
         ])
         .then((filesArray) => {
             window.csvFilesObj = {
                 k6e: filesArray[0],
-                RIO: filesArray[1],
-                normalRange: filesArray[2]
+                //RIO: filesArray[0],
+                normalRange: filesArray[1]
             };
             loadTexture();
             console.log(csvFilesObj);
@@ -107,8 +107,8 @@
             initializeScene();
 
             // ★使用する患者データを変更
-            // const patientData = csvFilesObj.k6e;
-            const patientData = csvFilesObj.RIO;
+            const patientData = csvFilesObj.k6e;
+            //const patientData = csvFilesObj.RIO;
             const startDate = patientData[0].datetime;
             const endDate = patientData[patientData.length - 1].datetime;
 
@@ -468,9 +468,9 @@
         }
 
     </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- <div id = "mouseInfo">
       マウス操作<br>
       スクロール：ズームイン・アウト<br>
@@ -479,6 +479,7 @@
     </div> -->
 
     <div id="three-canvas"></div>
-  </body>
+    <a href="../">サンプルコード一覧へもどる</a>
+</body>
 
 </html>
